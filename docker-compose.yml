@@ -12,7 +12,7 @@ services:
     volumes:
         - ./mods:/app/mods
         - ./world:/app/world
-        - ./logs:/app/world
+        - ./logs:/app/logs
         - ./forge_config:/app/config
         - ./conf/ops.json:/app/ops.json
         - ./conf/whitelist.json:/app/whitelist.json
