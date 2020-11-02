@@ -1,6 +1,8 @@
 version: "3"
 services:
   minecraft-forge:
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
     image: minecraft-forge:latest
     build:
         context: '.'
@@ -10,6 +12,11 @@ services:
     volumes:
         - ./mods:/app/mods
         - ./world:/app/world
+        - ./logs:/app/world
+        - ./forge_config:/app/config
+        - ./conf/ops.json:/app/ops.json
+        - ./conf/whitelist.json:/app/whitelist.json
+        - ./conf/server.properties:/app/server.properties
     ports:
       - 25565:25565
       - 25575:25575
